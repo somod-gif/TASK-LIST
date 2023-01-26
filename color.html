@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <button onclick="toggle()">TOGGLE BG</button>
+        <h1 id="sh1"></h1>
+        <h1 id="sh2"></h1>
+        <h1 id="sh3"></h1>
+    </main>
+    <script>
+        let sh1 = document.getElementById("sh1")
+        let sh2 = document.getElementById("sh2")
+        let sh3 = document.getElementById("sh3")
+        let { log, table, count } = console;
+        let fruits = ["mango", "apple", "cashew"]
+        for (let index = 0; index < fruits.length; index++) {
+            // log(index)
+            sh1.innerHTML = fruits[0]
+            sh2.innerHTML = fruits[1]
+            sh3.innerHTML = fruits[2]
+            console.log(fruits);
+
+        }
+        function toggle() {
+            if (document.body.style.background == "black") {
+                document.body.style.background = "white"
+            } else {
+                document.body.style.background = "black"
+            }
+        }
+        for(let index = 5; index <= 100; index ++ ){
+        console.log(index * 5);
+        screen.innerHTML += index*5
+        }
+    </script>
+</body>
+
+</html>

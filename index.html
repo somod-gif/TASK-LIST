@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../ALL FOLDERS/bootstrap-5.2.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../icofont/icofont.min.css">
+</head>
+<style>
+    
+</style>
+
+<body>
+    <main>
+        <div class="inp-div">
+            <h1>TO DO LIST</h1>
+            <div class="inn ">
+                <input type="text" id="myinput">
+                <button onclick="adde()" type="submit">ADD to List </button>
+                <button onclick="clearit()">Clear all</button>
+            </div>
+            <div id="screen" class="text"></div>
+        </div>
+
+    </main>
+</body>
+<script>
+    let myinput = document.getElementById("myinput");
+    let lists = [];
+    let screen = document.getElementById("screen");
+    function adde() {
+        lists.push(myinput.value)
+        console.log(lists);
+        lists.slice(-1).map((uthman) =>
+            screen.innerHTML +=  `<div class="ttt">${uthman}
+            <button class="icofont-ui-close"> </button>
+            </div>`
+        )
+        let deleted = document.querySelectorAll(".icofont-ui-close");
+        // console.log(deleted);
+        for (let i = 0; i < deleted.length; i++) {
+            deleted[i].onclick = function () {
+                // lists.splice(i, 1);
+                console.log(lists);
+                this.parentNode.remove();
+            };
+
+        }
+
+    }
+    function clearit() {
+      console.log("hello");
+      lists = []
+      console.log(lists);  
+    }
+</script>
+
+</html>

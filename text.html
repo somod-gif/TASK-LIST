@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <input id="input" type="text">
+        <button onclick="adde()">add</button>
+        <div id="screen"></div>
+    </main>
+</body>
+
+</html>
+<script>
+    let screen = document.getElementById("screen")
+    let myinput = document.getElementById("input")
+    let lists = []
+    function adde(){
+        screen.innnerHTML = "";
+        lists.push(myinput.value);
+        console.log(lists);
+        for (let index = 0; index < lists.length; index++) {
+            const enny = lists[index];
+            screen.innerHTML += `<span>${enny}</span><button onclick="del(${index})">DEL</button><br>`;
+        }
+    }
+    function del(index) {
+        lists.splice(index, 1);
+        console.log(lists);
+        screen.innerHTML = "";
+        for (let index = 0; index < lists.length; index++) {
+            const enny = lists[index];
+            screen.innerHTML += `<span>${enny}</span><button onclick="del(${index})">DEL</button><br>`;
+        }
+    }
+</script>
